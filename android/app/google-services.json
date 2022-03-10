@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "120042563511",
+    "firebase_url": "https://fir-project-77aac-default-rtdb.firebaseio.com",
+    "project_id": "fir-project-77aac",
+    "storage_bucket": "fir-project-77aac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120042563511:android:43e36b47f08d46badbea32",
+        "android_client_info": {
+          "package_name": "com.example.appointment_reminder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120042563511-9pjfpnt4c4vpkn870i7igolggk4kr1f8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTn0Esk8oNA8MPxGtG4FdIO4WAEovMt8k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120042563511-9pjfpnt4c4vpkn870i7igolggk4kr1f8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120042563511:android:d9feac9894d26588dbea32",
+        "android_client_info": {
+          "package_name": "com.example.schedule_reminder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120042563511-9pjfpnt4c4vpkn870i7igolggk4kr1f8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTn0Esk8oNA8MPxGtG4FdIO4WAEovMt8k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120042563511-9pjfpnt4c4vpkn870i7igolggk4kr1f8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
