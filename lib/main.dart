@@ -5,6 +5,7 @@ import 'package:schedule_reminder/screens/edit_contact.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'db/db_helper1.dart';
 import 'screens/home.dart';
 import 'package:schedule_reminder/screens/contacts.dart';
 import 'package:schedule_reminder/screens/appointment.dart';
@@ -15,6 +16,7 @@ Future<void> main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
   await DBHelper.initDb();
+  await DBHelper1.initDb();
   await GetStorage.init();
   await Firebase.initializeApp();
 
@@ -31,7 +33,7 @@ class appointmentScheduler extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'AppointmentScheduler',
-      initialRoute: Home.id,
+      initialRoute:'splash',
       routes: {
         Home.id: (context)=> Home(),
         Contacts.id: (context)=> Contacts(),
@@ -40,7 +42,6 @@ class appointmentScheduler extends StatelessWidget {
         AddContact.id: (context)=> AddContact(),
         EditContact.id: (context)=> EditContact(contactKey:'Key',),
         ContactInfo.id: (context)=> ContactInfo(contactKey: 'Key',),
-
 
       },
     );
