@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../screens/appointment.dart';
+import '../screens/contacts.dart';
+import '../screens/reminder.dart';
 class NavDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -24,23 +29,23 @@ class NavDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.verified_user),
-            title: Text('Profile'),
-            onTap: () => {Navigator.of(context).pop()},
+            title: Text('Set Reminders'),
+            onTap: () => {Get.to(AddReminder())},
           ),
           ListTile(
             leading: Icon(Icons.settings),
-            title: Text('Settings'),
+            title: Text('Add Documents'),
             onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
             leading: Icon(Icons.border_color),
-            title: Text('Feedback'),
-            onTap: () => {Navigator.of(context).pop()},
+            title: Text('Add Contacts'),
+            onTap: () => {Get.to(Contacts())},
           ),
           ListTile(
             leading: Icon(Icons.exit_to_app),
-            title: Text('Logout'),
-            onTap: () => {Navigator.of(context).pop()},
+            title: Text('Save Appointment Reminders'),
+            onTap: () => {Get.to(Appointments())},
           ),
         ],
       ),
