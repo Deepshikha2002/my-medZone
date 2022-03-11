@@ -36,7 +36,14 @@ class _AddAppointmentState extends State<AddAppointment>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("New Appointment"),
+        title: Text(
+            "New Appointment",
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.greenAccent[100],
       ),
       body: Container(
         padding: const EdgeInsets.only(left: 10, right: 10),

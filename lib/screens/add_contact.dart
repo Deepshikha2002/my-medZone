@@ -42,7 +42,14 @@ class _AddContactState extends State<AddContact> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Save Contacts'),
+        title: Text(
+            'Save Contacts',
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.greenAccent[100],
       ),
       body: Container(
         margin: EdgeInsets.all(15),
@@ -139,6 +146,7 @@ class _AddContactState extends State<AddContact> {
               Container(
                 width: double.infinity,
                 padding: EdgeInsets.symmetric(horizontal: 10),
+                color: Color.fromARGB(255, 6, 89, 92),
                 child: ElevatedButton(
                   child: const Text(
                     'save contact',
