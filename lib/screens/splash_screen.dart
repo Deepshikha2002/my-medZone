@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medzone/homepage.dart';
+import 'package:schedule_reminder/homepage.dart';
 
 class Splash extends StatefulWidget {
   static String id = 'splash';
