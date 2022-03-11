@@ -5,6 +5,7 @@ import 'package:schedule_reminder/screens/edit_contact.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:schedule_reminder/screens/splash_screen.dart';
 import 'db/db_helper1.dart';
 import 'screens/home.dart';
 import 'package:schedule_reminder/screens/contacts.dart';
@@ -35,6 +36,7 @@ class appointmentScheduler extends StatelessWidget {
       title: 'AppointmentScheduler',
       initialRoute:'splash',
       routes: {
+        'splash': (context) =>Splash(),
         Home.id: (context)=> Home(),
         Contacts.id: (context)=> Contacts(),
         Appointments.id: (context)=> Appointments(),
