@@ -146,7 +146,7 @@ class _AddContactState extends State<AddContact> {
               Container(
                 width: double.infinity,
                 padding: EdgeInsets.symmetric(horizontal: 10),
-                color: Color.fromARGB(255, 6, 89, 92),
+                color: Colors.black,
                 child: ElevatedButton(
                   child: const Text(
                     'save contact',
