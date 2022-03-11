@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:schedule_reminder/screens/splash_screen.dart';
 import 'db/db_helper1.dart';
-import 'screens/home.dart';
 import 'package:schedule_reminder/screens/contacts.dart';
 import 'package:schedule_reminder/screens/appointment.dart';
 import 'package:schedule_reminder/screens/add_appointment.dart';
@@ -37,7 +36,6 @@ class appointmentScheduler extends StatelessWidget {
       initialRoute:'splash',
       routes: {
         'splash': (context) =>Splash(),
-        Home.id: (context)=> Home(),
         Contacts.id: (context)=> Contacts(),
         Appointments.id: (context)=> Appointments(),
         AddAppointment.id: (context)=>AddAppointment(),
