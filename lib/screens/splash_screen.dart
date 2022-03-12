@@ -29,8 +29,8 @@ _navigatetohome()async{
              crossAxisAlignment: CrossAxisAlignment.center,
            children:[
                Image.asset('assets/icon.png',
-                 width:200,
-                 height: 200,),
+                 width:300,
+                 height: 300,),
         ],
     ),
       ),
