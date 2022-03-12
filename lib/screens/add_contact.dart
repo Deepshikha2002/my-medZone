@@ -46,10 +46,10 @@ class _AddContactState extends State<AddContact> {
             'Save Contacts',
           style: TextStyle(
             color: Colors.black,
-            fontWeight: FontWeight.bold,
+
           ),
         ),
-        backgroundColor: Colors.greenAccent[100],
+        backgroundColor: Colors.teal[200],
       ),
       body: Container(
         margin: EdgeInsets.all(15),

@@ -50,7 +50,7 @@ class _EditContactState extends State<EditContact> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Colors.greenAccent[100],
+        backgroundColor: Colors.teal[200],
       ),
       body: Container(
         margin: EdgeInsets.all(15),

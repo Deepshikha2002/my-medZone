@@ -30,16 +30,17 @@ class _firstpageState extends State<firstpage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.greenAccent[100],
+        backgroundColor: Colors.teal[200],
         title: Text("Medical Documents",style: TextStyle(
           color: Colors.black,
+
         ),),
         centerTitle:true,
       ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/documents1.png'),
+            image: AssetImage('assets/documents.jpeg'),
           ),
         ),
           child:FutureBuilder<List<FirebaseFile>>(
@@ -72,7 +73,7 @@ class _firstpageState extends State<firstpage> {
                                     child: Card(
                                           elevation: 6,
                                           margin: EdgeInsets.all(10),
-                                          color: Colors.green[50],
+                                          color: Colors.teal[50],
                                           shape: RoundedRectangleBorder(
                                               borderRadius: BorderRadius.circular(10)
                                           ),

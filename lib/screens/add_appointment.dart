@@ -40,10 +40,10 @@ class _AddAppointmentState extends State<AddAppointment>{
             "New Appointment",
           style: TextStyle(
             color: Colors.black,
-            fontWeight: FontWeight.bold,
+
           ),
         ),
-        backgroundColor: Colors.greenAccent[100],
+        backgroundColor: Colors.teal[200],
       ),
       body: Container(
         padding: const EdgeInsets.only(left: 10, right: 10),

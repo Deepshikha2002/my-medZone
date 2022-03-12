@@ -25,7 +25,7 @@ class AppointmentTile extends StatelessWidget {
         //  width: SizeConfig.screenWidth * 0.78,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          color: Colors.greenAccent[100],
+          color: Colors.teal[200],
         ),
         child: Row(children: [
           Expanded(

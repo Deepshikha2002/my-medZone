@@ -15,7 +15,7 @@ class TaskTile extends StatelessWidget {
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: Colors.greenAccent[100],
+        color: Colors.teal[200],
         ),
         child: Row(children: [
           Expanded(
@@ -59,7 +59,7 @@ class TaskTile extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(width: 120,),
+            SizedBox(width: 100,),
             Container(
                     child: Center(
                       child: Padding(

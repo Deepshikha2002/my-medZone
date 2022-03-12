@@ -32,7 +32,7 @@ class _ContactsState extends State<Contacts> {
     return Card(
       elevation: 6,
       margin: EdgeInsets.all(10),
-      color: Colors.green[50],
+      color: Colors.teal[50],
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10)
       ),
@@ -40,7 +40,7 @@ class _ContactsState extends State<Contacts> {
           margin: EdgeInsets.symmetric(vertical: 5),
           padding: EdgeInsets.all(10),
           height: 100,
-          color: Colors.green[50],
+          color: Colors.teal[50],
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -326,16 +326,16 @@ class _ContactsState extends State<Contacts> {
             "Contact List",
           style: TextStyle(
             color: Colors.black,
-            fontWeight: FontWeight.bold,
+
           ),
         ),
         centerTitle:true,
-        backgroundColor: Colors.greenAccent[100],
+        backgroundColor: Colors.teal[200],
       ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/contacts.png'),
+            image: AssetImage('assets/contacts.jpeg'),
           ),
         ),
         child: Container(

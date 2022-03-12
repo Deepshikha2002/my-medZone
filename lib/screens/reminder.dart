@@ -54,8 +54,15 @@ class _AddReminderState extends State<AddReminder> {
   Widget build(BuildContext context) {
     return Scaffold(
        appBar: AppBar(
-        title:  Text('Create Reminder',),
-         backgroundColor: Colors.greenAccent[100],
+        title:  Text(
+          'Create Reminder',
+          style: TextStyle(
+            color: Colors.black,
+
+          ),
+        ),
+         centerTitle:true,
+         backgroundColor: Colors.teal[200],
         leading: GestureDetector(
           onTap: (){
             Get.back();

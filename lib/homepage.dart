@@ -38,12 +38,12 @@ class _HomepageState extends State<Homepage> {
            color: Colors.black,
          ),),
         centerTitle:true,
-        backgroundColor: Colors.greenAccent[100],
+        backgroundColor: Colors.teal[200],
       ),
       body: Container(
         decoration: BoxDecoration(
         image: DecorationImage(
-        image: AssetImage('assets/remind.png'),
+        image: AssetImage('assets/remind.jpeg'),
         ),
         ),
         child:  Column(

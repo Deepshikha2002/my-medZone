@@ -89,8 +89,8 @@ class Notify{
 
     await flutterLocalNotificationsPlugin.show(
       0,
-      title,
-      body,
+      "${title},",
+      "You have an appointment with Dr. ${body}",
       platformChannelSpecifics,
       payload: 'Default_Sound',
     );

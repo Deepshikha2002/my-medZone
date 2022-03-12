@@ -44,10 +44,10 @@ class _AppointmentState extends State<Appointments> {
             "Appointment Reminder",
             style: TextStyle(
               color: Colors.black,
-              fontWeight: FontWeight.bold,
+
             ),
         ),
-        backgroundColor: Colors.greenAccent[100],
+        backgroundColor: Colors.teal[200],
 
       ),
       backgroundColor: Colors.white,
