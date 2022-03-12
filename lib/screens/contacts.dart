@@ -29,107 +29,116 @@ class _ContactsState extends State<Contacts> {
   }
 
   Widget _buildContactItem({required Map contact,}){
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 5),
-      padding: EdgeInsets.all(10),
-      height: 90,
-      color: Colors.white,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          GestureDetector(
-            onTap: (){
-             _showContactInfo(contact: contact);
-            },
-            child: Row(
-              children: [
-                Icon(Icons.person,
-                  color: Colors.black,
-                  size: 20,
-                ),
-                SizedBox(
-                  width: 6,
-                ),
-                Text(
-                  contact['name'],
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 5,),
-          Row(
-            children: [
-              Icon(Icons.phone_iphone,
-                color: Colors.black,
-                size: 13,
-              ),
-              SizedBox(
-                width: 6,
-              ),
-              Text(
-                contact['phone Number'],
-                style: TextStyle(
-                  fontSize: 13,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => EditContact(
-                            contactKey: contact['key']!,
-                          )));
-                },
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.edit,
-                      color: Theme.of(context).primaryColor,
-                      size: 20,
-                    ),
-
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              GestureDetector(
-                onTap: () {
-                  _showDeleteDialog(contact: contact);
-                },
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.delete,
-                      color: Colors.red[700],
-                      size: 20,
-                    ),
-
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 20,
-              ),
-            ],
-          ),
-        ],
+    return Card(
+      elevation: 6,
+      margin: EdgeInsets.all(10),
+      color: Colors.green[50],
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10)
       ),
+      child:Container(
+          margin: EdgeInsets.symmetric(vertical: 5),
+          padding: EdgeInsets.all(10),
+          height: 90,
+          color: Colors.green[50],
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              GestureDetector(
+                onTap: (){
+                 _showContactInfo(contact: contact);
+                },
+                child: Row(
+                  children: [
+                    Icon(Icons.person,
+                      color: Colors.black,
+                      size: 20,
+                    ),
+                    SizedBox(
+                      width: 6,
+                    ),
+                    Text(
+                      contact['name'],
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 5,),
+              Row(
+                children: [
+                  Icon(Icons.phone_iphone,
+                    color: Colors.black,
+                    size: 13,
+                  ),
+                  SizedBox(
+                    width: 6,
+                  ),
+                  Text(
+                    contact['phone Number'],
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => EditContact(
+                                contactKey: contact['key']!,
+                              )));
+                    },
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.edit,
+                          color: Theme.of(context).primaryColor,
+                          size: 20,
+                        ),
+
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      _showDeleteDialog(contact: contact);
+                    },
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.delete,
+                          color: Colors.red[700],
+                          size: 20,
+                        ),
+
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+
     );
   }
 
