@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:schedule_reminder/controllers/reminder_controller.dart';
 import 'package:schedule_reminder/model/reminderformat.dart';
 import 'package:schedule_reminder/screens/reminder.dart';
+import 'package:schedule_reminder/services/notification_services1.dart';
 import 'package:schedule_reminder/widgets/button.dart';
 import 'package:get/get.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:schedule_reminder/widgets/task_tile.dart';
 import 'package:schedule_reminder/widgets/navbar.dart';
+import 'package:intl/intl.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({ Key? key }) : super(key: key);
@@ -17,6 +19,15 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   final _reminderController = Get.put(ReminderController());
+  var _notify;
+   @override
+  void initState() {
+    super.initState();
+    _notify = Notifying();
+    _notify.requestIOSPermissions();
+    _notify.initializeNotification();
+  }
+  DateTime _selectedDate = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,27 +40,6 @@ class _HomepageState extends State<Homepage> {
         centerTitle:true,
         backgroundColor: Colors.greenAccent[100],
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/remind.png'),
-          ),
-        ),
-        child:  Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children:[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(child: MyButton(label: "+ Add Reminder",  onTap: () async { await Get.to(AddReminder());
-              _reminderController.getRems();
-              }
-              ),
-              ),
-            ),
-            SizedBox(height: 10,),
-            _showReminders(),
-          ],
-        ),
       ),
     );
   }
@@ -60,6 +50,15 @@ class _HomepageState extends State<Homepage> {
         return ListView.builder(
           itemCount: _reminderController.remList.length,
           itemBuilder: (_, index){
+            Reminder reminder= _reminderController.remList[index];
+             DateTime date = DateFormat.jm().parse(
+                  reminder.startTime.toString());
+              var myTime = DateFormat("HH:mm").format(date);
+              _notify.scheduledNotification(
+                  int.parse(myTime.toString().split(":")[0]),
+                  int.parse(myTime.toString().split(":")[1]),
+                 reminder
+              );
              return AnimationConfiguration.staggeredList(
                position: index,
               child:SlideAnimation(
@@ -68,7 +67,7 @@ class _HomepageState extends State<Homepage> {
                     children: [
                       GestureDetector(
                         onTap: (){
-                         _showBottomBar(context, _reminderController.remList[index]);
+                         _showBottomBar(context, reminder);
                         },
                         child: TaskTile( _reminderController.remList[index]),
                       )
@@ -147,5 +146,44 @@ _bottomSheetButton({
       ),
     ) ;
   }
+  _addNewRem() {
+    return Container(
+        margin: const EdgeInsets.only(left: 10, right: 10, top: 5),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      DateFormat.yMMMMd().format(DateTime.now()),
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const Text(
+                      "Today",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                )
+            ),
+            MyButton(label: "+Add Reminder", onTap: () async {
+              await Get.to(() =>(AddReminder()));
+              _reminderController.getRems();
+            }
+            )
+
+
+          ],
+        )
+    );
+  }
+
 
 }

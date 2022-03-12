@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:schedule_reminder/controllers/reminder_controller.dart';
@@ -17,18 +19,29 @@ class _AddReminderState extends State<AddReminder> {
    final ReminderController _reminderController= Get.put(ReminderController());
    final TextEditingController _titleController= TextEditingController();
    final TextEditingController _dosageController= TextEditingController();
-   var _image;
+    var _image;
+   var imagePicker;
+   void initState() {
+    super.initState();
+    imagePicker = new ImagePicker();
+  }
   Future getImagefromcamera() async {
-    var image = await ImagePicker().pickImage(source: ImageSource.camera,);
-    setState(() {
-      _image = image;
-    });
+    XFile image = await imagePicker.pickImage(
+          source: ImageSource.camera,
+          imageQuality: 50,
+          preferredCameraDevice: CameraDevice.front);
+            setState(() {
+            _image = File(image.path);
+            });
   } 
-  Future getImagefromGallery() async {
-    var image = await ImagePicker().pickImage(source: ImageSource.gallery,);
-    setState(() {
-      _image = image;
-    });
+  Future getImagefromGallery()async
+   {  XFile image = await imagePicker.pickImage(
+       source: ImageSource.gallery,
+        imageQuality: 50,
+        );
+          setState(() {
+         _image = File(image.path);
+          });  
   }
   String _startTime = DateFormat("hh:mm a").format(DateTime.now()).toString();
   String _selectedRepeat = "None";
