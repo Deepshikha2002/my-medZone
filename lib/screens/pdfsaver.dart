@@ -31,47 +31,60 @@ class _firstpageState extends State<firstpage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.greenAccent[100],
-        title: Text("medic Doc saver"),
+        title: Text("Medical Documents",style: TextStyle(
+          color: Colors.black,
+        ),),
         centerTitle:true,
       ),
-      body: FutureBuilder<List<FirebaseFile>>(
-        future:futureFiles,
-        builder:(context,snapshot) {
-          switch(snapshot.connectionState) {
-            case ConnectionState.waiting:
-              return Center(child: CircularProgressIndicator());
-            default:
-              if(snapshot.hasError){
-                return Center(child: Text('some error occured'),);
-              }else {
-                final files = snapshot.data!;
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    buildHeader(files.length),
-                    const SizedBox(height: 12,),
-                    Expanded(
-                        child: ListView.builder(
+      body: Container(
+          child:FutureBuilder<List<FirebaseFile>>(
+            future:futureFiles,
+            builder:(context,snapshot) {
+              switch(snapshot.connectionState) {
+                case ConnectionState.waiting:
+                  return Center(child: CircularProgressIndicator());
+                default:
+                  if(snapshot.hasError){
+                    return Center(child: Text('some error occured'),);
+                  }else {
+                    final files = snapshot.data!;
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        //buildHeader(files.length),
+                        const SizedBox(height: 12,),
+                        Expanded(
+                            child: ListView.builder(
 
-                            itemCount: files.length,
-                          itemBuilder: (context,index){
-                              final file=files[index];
+                                itemCount: files.length,
+                              itemBuilder: (context,index){
+                                  final file=files[index];
 
-                              return Card(
-                                  elevation: 6,
-                                  margin: EdgeInsets.all(10),
-                                  color: Colors.green[50],
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)
-                                  ),
-                                  child:buildFile(context,file));
-                          },
-                        ))
-                  ],);
+                                  return Container(
+                                    width:150,
+                                      height:150,
+                                      padding: new EdgeInsets.all(5.0),
+                                    child: Card(
+                                          elevation: 6,
+                                          margin: EdgeInsets.all(10),
+                                          color: Colors.green[50],
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(10)
+                                          ),
+                                          child:buildFile(context,file),
+                                          ),
+
+
+                                  );
+                              },
+                            ))
+                      ],);
+                  }
               }
-          }
-        },
-          ),
+            },
+              ),
+
+      ),
 
       floatingActionButton: FloatingActionButton(
         onPressed: () async{
@@ -135,25 +148,25 @@ class _firstpageState extends State<firstpage> {
       }
     }
   );
-  Widget buildHeader(int length) => ListTile(
-    tileColor: Colors.greenAccent[100],
-    leading: Container(
-      width: 52,
-      height: 52,
-      child: Icon(
-        Icons.file_copy,
-        color: Colors.white,
-      ),
-    ),
-    title: Text(
-      '$length Files',
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 20,
-        color: Colors.white,
-      ),
-    ),
-  );
+  // Widget buildHeader(int length) => ListTile(
+  //   tileColor: Colors.greenAccent[100],
+  //   leading: Container(
+  //     width: 52,
+  //     height: 52,
+  //     child: Icon(
+  //       Icons.file_copy,
+  //       color: Colors.white,
+  //     ),
+  //   ),
+  //   title: Text(
+  //     '$length Files',
+  //     style: TextStyle(
+  //       fontWeight: FontWeight.bold,
+  //       fontSize: 20,
+  //       color: Colors.white,
+  //     ),
+  //   ),
+  // );
    Future uploadFile(file) async{
     if(file==null) return ;
     final fileName = basename(file!.path);
