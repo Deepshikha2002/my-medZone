@@ -2,8 +2,7 @@
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flutter/material.dart';
-import 'package:medicdocumentsaver2/api/firebase_file.dart';
+import 'package:schedule_reminder/model/firebase_file.dart';
 import 'package:open_file/open_file.dart';
 
 import 'package:path_provider/path_provider.dart';
@@ -14,7 +13,7 @@ class FirebaseApi{
     try {
       final ref= FirebaseStorage.instance.ref(destination);
       return ref.putFile(file);
-    } on FirebaseException catch (e) {
+    } on FirebaseException {
       // TODO
       return null;
     }

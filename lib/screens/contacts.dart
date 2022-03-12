@@ -3,7 +3,6 @@ import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:schedule_reminder/screens/add_contact.dart';
 
-import 'contact_info.dart';
 import 'edit_contact.dart';
 
 
@@ -39,12 +38,7 @@ class _ContactsState extends State<Contacts> {
         children: [
           GestureDetector(
             onTap: (){
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (_)=>ContactInfo(
-                        contactKey: contact['key'],
-                      )));
+             _showContactInfo(contact: contact);
             },
             child: Row(
               children: [
@@ -136,6 +130,158 @@ class _ContactsState extends State<Contacts> {
       ),
     );
   }
+
+  _showContactInfo({required Map contact }){
+    showDialog(
+        context: context,
+        builder: (context) {
+          return Dialog(
+            backgroundColor: Colors.greenAccent[100],
+            child: Row(
+              children: [
+                SizedBox(height: 5,),
+                Row(
+                  children: [
+                    Text(
+                      "Name:",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                      contact['name'],
+                      style: TextStyle(
+                        fontSize: 12,
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Phone No:",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                        contact['phoneNumber'],
+                        style: TextStyle(
+                          fontSize: 12,
+                        )
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Telephone No:",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                        contact['teleNumber'],
+                        style: TextStyle(
+                          fontSize: 12,
+                        )
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Email Address:",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                        contact['email'],
+                        style: TextStyle(
+                          fontSize: 12,
+                        )
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Address:",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                        contact['address'],
+                        style: TextStyle(
+                          fontSize: 12,
+                        )
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Specialization:",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                        contact['specialization'],
+                        style: TextStyle(
+                          fontSize: 12,
+                        )
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          );
+        }
+    );
+  }
+
   _showDeleteDialog({required Map contact }) {
     showDialog(
         context: context,

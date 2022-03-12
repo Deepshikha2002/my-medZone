@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../screens/appointment.dart';
 import '../screens/contacts.dart';
+import '../screens/pdfsaver.dart';
 import '../screens/reminder.dart';
 class NavDrawer extends StatelessWidget {
   @override
@@ -29,7 +30,7 @@ class NavDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.folder_copy_sharp),
             title: Text('Add Documents'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {Get.to(firstpage())},
           ),
           ListTile(
             leading: Icon(Icons.account_balance_sharp),

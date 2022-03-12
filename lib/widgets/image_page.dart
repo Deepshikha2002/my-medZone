@@ -1,7 +1,5 @@
-
-
-import 'package:medicdocumentsaver2/api/firebase_api.dart';
-import 'package:medicdocumentsaver2/api/firebase_file.dart';
+import 'package:schedule_reminder/services/firebase_api.dart';
+import 'package:schedule_reminder/model/firebase_file.dart';
 import 'package:flutter/material.dart';
 
 class ImagePage extends StatelessWidget {

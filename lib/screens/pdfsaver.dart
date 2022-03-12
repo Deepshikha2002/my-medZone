@@ -4,14 +4,12 @@ import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 import 'package:firebase_storage/firebase_storage.dart' ;
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:medicdocumentsaver2/api/firebase_file.dart';
-import 'package:medicdocumentsaver2/pdffirebase/files_page.dart';
-import 'package:medicdocumentsaver2/pdffirebase/image_page.dart';
-import 'package:medicdocumentsaver2/pdffirebase/view_pdf.dart';
-import 'package:open_file/open_file.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:schedule_reminder/widgets/image_page.dart';
+import 'package:schedule_reminder/services/firebase_api.dart';
+import 'package:schedule_reminder/widgets/view_pdf.dart';
+import 'package:schedule_reminder/model/firebase_file.dart';
 import 'package:path/path.dart'  ;
-import '../api/firebase_api.dart';
+import '../services/firebase_api.dart';
 class firstpage extends StatefulWidget {
   const firstpage({Key? key}) : super(key: key);
 
