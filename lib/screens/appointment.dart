@@ -40,16 +40,31 @@ class _AppointmentState extends State<Appointments> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Appointment Reminder"),
+        title: Text(
+            "Appointment Reminder",
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
+        ),
+        backgroundColor: Colors.greenAccent[100],
+
       ),
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          _addNewAppt(),
-          SizedBox(height: 10,),
-          _showAppointments(),
-        ],
-      ),
+      body:Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/appointments.png'),
+          ),
+        ),
+        child:  Column(
+          children: [
+            _addNewAppt(),
+            SizedBox(height: 10,),
+            _showAppointments(),
+          ],
+        ),
+      )
     );
   }
 
@@ -189,6 +204,7 @@ class _AppointmentState extends State<Appointments> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(height: 7,),
                     Text(
                       DateFormat.yMMMMd().format(DateTime.now()),
                       style: TextStyle(

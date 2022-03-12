@@ -3,12 +3,13 @@ import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:schedule_reminder/screens/add_contact.dart';
 
-import 'contact_info.dart';
 import 'edit_contact.dart';
 
 
 class Contacts extends StatefulWidget {
   static String id= 'Contacts';
+
+  const Contacts({Key? key}) : super(key: key);
 
   @override
   _ContactsState createState() => new _ContactsState();
@@ -28,114 +29,270 @@ class _ContactsState extends State<Contacts> {
   }
 
   Widget _buildContactItem({required Map contact,}){
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 5),
-      padding: EdgeInsets.all(10),
-      height: 90,
-      color: Colors.white,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          GestureDetector(
-            onTap: (){
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (_)=>ContactInfo(
-                        contactKey: contact['key'],
-                      )));
-            },
+    return Card(
+      elevation: 6,
+      margin: EdgeInsets.all(10),
+      color: Colors.green[50],
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10)
+      ),
+      child:Container(
+          margin: EdgeInsets.symmetric(vertical: 5),
+          padding: EdgeInsets.all(10),
+          height: 100,
+          color: Colors.green[50],
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              GestureDetector(
+                onTap: (){
+                 _showContactInfo(contact: contact);
+                },
+                child: Row(
+                  children: [
+                    Icon(Icons.person,
+                      color: Colors.black,
+                      size: 22,
+                    ),
+                    SizedBox(
+                      width: 6,
+                    ),
+                    Text(
+                      contact['name'],
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 5,),
+              Row(
+                children: [
+                  Icon(Icons.phone_iphone,
+                    color: Colors.black,
+                    size: 18,
+                  ),
+                  SizedBox(
+                    width: 6,
+                  ),
+                  Text(
+                    contact['phone Number'],
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => EditContact(
+                                contactKey: contact['key']!,
+                              )));
+                    },
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.edit,
+                          color: Theme.of(context).primaryColor,
+                          size: 20,
+                        ),
+
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 6,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      _showDeleteDialog(contact: contact);
+                    },
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.delete,
+                          color: Colors.red[700],
+                          size: 20,
+                        ),
+
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+
+    );
+  }
+
+  _showContactInfo({required Map contact }){
+    showDialog(
+        context: context,
+        builder: (context) {
+          return Dialog(
+            backgroundColor: Colors.greenAccent[100],
             child: Row(
               children: [
-                Icon(Icons.person,
-                  color: Colors.black,
-                  size: 20,
+                SizedBox(height: 5,),
+                Row(
+                  children: [
+                    Text(
+                      "Name:",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                      contact['name'],
+                      style: TextStyle(
+                        fontSize: 12,
+                      ),
+                    )
+                  ],
                 ),
                 SizedBox(
-                  width: 6,
+                  height: 10,
                 ),
-                Text(
-                  contact['name'],
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600,
-                  ),
+                Row(
+                  children: [
+                    Text(
+                      "Phone No:",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                        contact['phoneNumber'],
+                        style: TextStyle(
+                          fontSize: 12,
+                        )
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Telephone No:",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                        contact['teleNumber'],
+                        style: TextStyle(
+                          fontSize: 12,
+                        )
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Email Address:",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                        contact['email'],
+                        style: TextStyle(
+                          fontSize: 12,
+                        )
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Address:",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                        contact['address'],
+                        style: TextStyle(
+                          fontSize: 12,
+                        )
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Specialization:",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                        contact['specialization'],
+                        style: TextStyle(
+                          fontSize: 12,
+                        )
+                    ),
+                  ],
                 ),
               ],
             ),
-          ),
-          SizedBox(height: 5,),
-          Row(
-            children: [
-              Icon(Icons.phone_iphone,
-                color: Colors.black,
-                size: 13,
-              ),
-              SizedBox(
-                width: 6,
-              ),
-              Text(
-                contact['phone Number'],
-                style: TextStyle(
-                  fontSize: 13,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => EditContact(
-                            contactKey: contact['key']!,
-                          )));
-                },
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.edit,
-                      color: Theme.of(context).primaryColor,
-                      size: 20,
-                    ),
-
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              GestureDetector(
-                onTap: () {
-                  _showDeleteDialog(contact: contact);
-                },
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.delete,
-                      color: Colors.red[700],
-                      size: 20,
-                    ),
-
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 20,
-              ),
-            ],
-          ),
-        ],
-      ),
+          );
+        }
     );
   }
+
   _showDeleteDialog({required Map contact }) {
     showDialog(
         context: context,
@@ -165,24 +322,40 @@ class _ContactsState extends State<Contacts> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Contact List"),
+        title: Text(
+            "Contact List",
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle:true,
+        backgroundColor: Colors.greenAccent[100],
       ),
       body: Container(
-        height: double.infinity,
-        child: FirebaseAnimatedList(query: _ref! , itemBuilder: (BuildContext context,
-            DataSnapshot snapshot,Animation<double>animation,int index){
-          Map contact = snapshot.value as Map;
-          contact['key'] = snapshot.key;
-          return _buildContactItem(contact: contact);
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/contacts.png'),
+          ),
+        ),
+        child: Container(
+            height: double.infinity,
+            child: FirebaseAnimatedList(query: _ref! , itemBuilder: (BuildContext context,
+                DataSnapshot snapshot,Animation<double>animation,int index){
+              Map contact = snapshot.value as Map;
+              contact['key'] = snapshot.key;
+              return _buildContactItem(contact: contact);
 
-        },),
+            },),
+          ),
+
       ),
 
       floatingActionButton: FloatingActionButton(onPressed: () {
         Navigator.pushNamed(context, AddContact.id);
       },
         child: Icon(Icons.add),
-        backgroundColor: Color(0xff007e33),
+        backgroundColor: Color.fromARGB(255,6,89,92),
         foregroundColor: Colors.white,
       ),
 

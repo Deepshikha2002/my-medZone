@@ -43,7 +43,14 @@ class _EditContactState extends State<EditContact> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Edit Contact'),
+        title: Text(
+            'Edit Contact',
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.greenAccent[100],
       ),
       body: Container(
         margin: EdgeInsets.all(15),

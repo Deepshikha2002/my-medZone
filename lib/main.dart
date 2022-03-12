@@ -12,6 +12,7 @@ import 'package:schedule_reminder/screens/appointment.dart';
 import 'package:schedule_reminder/screens/add_appointment.dart';
 import 'package:get/get.dart';
 
+
 Future<void> main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,6 +43,7 @@ class appointmentScheduler extends StatelessWidget {
         AddContact.id: (context)=> AddContact(),
         EditContact.id: (context)=> EditContact(contactKey:'Key',),
         ContactInfo.id: (context)=> ContactInfo(contactKey: 'Key',),
+
 
       },
     );

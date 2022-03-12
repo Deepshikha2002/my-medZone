@@ -25,7 +25,7 @@ class AppointmentTile extends StatelessWidget {
         //  width: SizeConfig.screenWidth * 0.78,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          color: Colors.green,
+          color: Colors.greenAccent[100],
         ),
         child: Row(children: [
           Expanded(
@@ -38,7 +38,7 @@ class AppointmentTile extends StatelessWidget {
                     textStyle: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                        color: Colors.black),
                   ),
                 ),
                 SizedBox(
@@ -49,7 +49,7 @@ class AppointmentTile extends StatelessWidget {
                   children: [
                     Icon(
                       Icons.access_time_rounded,
-                      color: Colors.grey[200],
+                      color: Colors.black,
                       size: 18,
                     ),
                     SizedBox(width: 4),
@@ -57,16 +57,16 @@ class AppointmentTile extends StatelessWidget {
                       "${appointment!.startTime} - ${appointment!.endTime}",
                       style: GoogleFonts.lato(
                         textStyle:
-                        TextStyle(fontSize: 13, color: Colors.grey[100]),
+                        TextStyle(fontSize: 13, color: Colors.black),
                       ),
                     ),
                   ],
                 ),
                 SizedBox(height: 12),
                 Text(
-                  "appointment with ${appointment?.docName ?? " "}",
+                  "appointment with Dr. ${appointment?.docName ?? " "}",
                   style: GoogleFonts.lato(
-                    textStyle: TextStyle(fontSize: 15, color: Colors.grey[100]),
+                    textStyle: TextStyle(fontSize: 15, color: Colors.black),
                   ),
                 ),
                 SizedBox(
@@ -76,7 +76,7 @@ class AppointmentTile extends StatelessWidget {
                   "on: ${appointment!.date} ",
                   style: GoogleFonts.lato(
                     textStyle:
-                    TextStyle(fontSize: 13, color: Colors.grey[100]),
+                    TextStyle(fontSize: 13, color: Colors.black),
                   ),
                 ),
               ],
@@ -86,7 +86,7 @@ class AppointmentTile extends StatelessWidget {
             margin: EdgeInsets.symmetric(horizontal: 10),
             height: 60,
             width: 0.5,
-            color: Colors.grey[200]!.withOpacity(0.7),
+            color: Colors.grey[400]!.withOpacity(0.7),
           ),
 
         ]),
