@@ -66,7 +66,7 @@ class TaskTile extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Card(
                             child: Image(
-                              image: AssetImage('assets/image${rem!.id}.png'),
+                              image: AssetImage('assets/image${rem!.id}.jpeg'),
                               height: 120,
                               width: 120,
                             )

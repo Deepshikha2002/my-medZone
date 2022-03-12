@@ -14,7 +14,7 @@ class NotificationPage extends StatelessWidget {
             icon: Icon(Icons.arrow_back_ios),
             color: Colors.grey,
           ),
-          title: Text(this.label.toString().split("|")[0],
+          title: Text(this.label.toString().split(" | ")[0],
             style: TextStyle(
                 color: Colors.black
             ),
@@ -28,7 +28,7 @@ class NotificationPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.grey[400]
             ),
-            child: Text(this.label.toString().split("|")[1],
+            child: Text(this.label.toString().split(" | ")[1],
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 30,

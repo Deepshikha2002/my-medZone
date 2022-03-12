@@ -17,10 +17,10 @@ class NavDrawer extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
             decoration: BoxDecoration(
-                color: Colors.greenAccent[100],
+                color: Colors.cyan[100],
                 image: DecorationImage(
                     fit: BoxFit.fill,
-              image: AssetImage('assets/icon.png',
+              image: AssetImage('assets/icon.jpeg',
               ),
             ),
            ),
