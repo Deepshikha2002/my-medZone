@@ -45,6 +45,15 @@ dependencies:
   sqflite: ^2.0.2
   flutter_staggered_animations: ^1.0.0
   image_picker: ^0.8.4+10
+  advance_pdf_viewer: ^2.0.1
+  file_picker: ^4.5.0
+
+  firebase_storage: ^10.2.9
+  firebase_storage_web: ^3.2.10
+
+  http: ^0.13.0
+  open_file: ^3.2.1
+  path_provider: ^2.0.9
 
   
 
