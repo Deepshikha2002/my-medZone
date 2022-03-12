@@ -27,7 +27,7 @@ class _HomepageState extends State<Homepage> {
     _notify.requestIOSPermissions();
     _notify.initializeNotification();
   }
-  DateTime _selectedDate = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +40,20 @@ class _HomepageState extends State<Homepage> {
         centerTitle:true,
         backgroundColor: Colors.greenAccent[100],
       ),
+      body: Container(
+        decoration: BoxDecoration(
+        image: DecorationImage(
+        image: AssetImage('assets/remind.png'),
+        ),
+        ),
+        child:  Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children:[
+            _addNewRem(),
+            SizedBox(height: 10,),
+            _showReminders(),
+          ],
+        ),
       ),
     );
   }
@@ -148,7 +162,7 @@ _bottomSheetButton({
   }
   _addNewRem() {
     return Container(
-        margin: const EdgeInsets.only(left: 10, right: 10, top: 5),
+        margin: const EdgeInsets.only(left: 10, right: 10, top: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

@@ -120,8 +120,8 @@ class _AppointmentState extends State<Appointments> {
               height: 6,
               width: 120,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.red,
+                borderRadius: BorderRadius.circular(5),
+                color: Color.fromARGB(255, 235, 228, 227),
               ),
             ),
             Spacer(),
@@ -168,7 +168,7 @@ class _AppointmentState extends State<Appointments> {
 
         decoration: BoxDecoration(
           border: Border.all(
-            width: 4,
+            width: 1,
             color: isClose==true?Colors.black:clr,
           ),
           borderRadius: BorderRadius.circular(20),
@@ -178,11 +178,11 @@ class _AppointmentState extends State<Appointments> {
           child: Text(
             label,
             style: isClose? TextStyle(
-                fontSize: 20,
+                fontSize: 18,
                 fontWeight: FontWeight.w400,
                 color: Colors.white
             ):TextStyle(
-                fontSize: 20,
+                fontSize: 18,
                 fontWeight: FontWeight.w400,
                 color:Colors.white),
           ),

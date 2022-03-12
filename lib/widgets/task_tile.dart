@@ -15,7 +15,7 @@ class TaskTile extends StatelessWidget {
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: Colors.cyanAccent,
+        color: Colors.greenAccent[100],
         ),
         child: Row(children: [
           Expanded(
@@ -59,22 +59,25 @@ class TaskTile extends StatelessWidget {
                 ),
               ],
             ),
-            Column(
-            children:[
-              Container(
-            child: Center(
-             child: Padding(
-               padding: const EdgeInsets.all(8.0),
-                child: Card(
-                    child: Image(image: AssetImage('assets/image["${rem!.id}"].jpg'))
-                ),
-              ),
-              ),
-              )
-            ] 
+            SizedBox(width: 120,),
+            Container(
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Card(
+                            child: Image(
+                              image: AssetImage('assets/image${rem!.id}.png'),
+                              height: 120,
+                              width: 120,
+                            )
+                          ),
+                        ),
+                      ),
+                  ),
+              ]
             )
-           ],
-           ),
+
+
           ),
          
         ]),
