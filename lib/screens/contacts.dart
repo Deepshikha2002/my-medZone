@@ -53,7 +53,7 @@ class _ContactsState extends State<Contacts> {
                   children: [
                     Icon(Icons.person,
                       color: Colors.black,
-                      size: 20,
+                      size: 22,
                     ),
                     SizedBox(
                       width: 6,
@@ -61,7 +61,7 @@ class _ContactsState extends State<Contacts> {
                     Text(
                       contact['name'],
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 18,
                         color: Colors.black,
                         fontWeight: FontWeight.w600,
                       ),
@@ -74,7 +74,7 @@ class _ContactsState extends State<Contacts> {
                 children: [
                   Icon(Icons.phone_iphone,
                     color: Colors.black,
-                    size: 13,
+                    size: 18,
                   ),
                   SizedBox(
                     width: 6,
@@ -82,7 +82,7 @@ class _ContactsState extends State<Contacts> {
                   Text(
                     contact['phone Number'],
                     style: TextStyle(
-                      fontSize: 13,
+                      fontSize: 18,
                       color: Colors.black,
                       fontWeight: FontWeight.w600,
                     ),
@@ -113,7 +113,7 @@ class _ContactsState extends State<Contacts> {
                     ),
                   ),
                   SizedBox(
-                    width: 20,
+                    width: 6,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -329,6 +329,7 @@ class _ContactsState extends State<Contacts> {
             fontWeight: FontWeight.bold,
           ),
         ),
+        centerTitle:true,
         backgroundColor: Colors.greenAccent[100],
       ),
       body: Container(

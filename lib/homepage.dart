@@ -22,10 +22,11 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       drawer: NavDrawer(),
       appBar: AppBar(
-        title: Center(child: Text('medZone',
+        title:  Text('medZone',
          style: TextStyle(
            color: Colors.black,
-         ),)),
+         ),),
+        centerTitle:true,
         backgroundColor: Colors.greenAccent[100],
       ),
       body: Column(
