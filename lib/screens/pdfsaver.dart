@@ -21,6 +21,7 @@ class _firstpageState extends State<firstpage> {
   late Future<List<FirebaseFile>> futureFiles;
   UploadTask? task;
   File? file;
+
   @override
   void initState() {
     super.initState();
@@ -29,7 +30,7 @@ class _firstpageState extends State<firstpage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.cyan[200],
+        backgroundColor: Colors.greenAccent[100],
         title: Text("medic Doc saver"),
         centerTitle:true,
       ),
@@ -51,10 +52,19 @@ class _firstpageState extends State<firstpage> {
                     const SizedBox(height: 12,),
                     Expanded(
                         child: ListView.builder(
+
                             itemCount: files.length,
                           itemBuilder: (context,index){
                               final file=files[index];
-                              return buildFile(context,file);
+
+                              return Card(
+                                  elevation: 6,
+                                  margin: EdgeInsets.all(10),
+                                  color: Colors.green[50],
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10)
+                                  ),
+                                  child:buildFile(context,file));
                           },
                         ))
                   ],);
@@ -62,6 +72,7 @@ class _firstpageState extends State<firstpage> {
           }
         },
           ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: () async{
           final result= await FilePicker.platform.pickFiles(
@@ -79,7 +90,7 @@ class _firstpageState extends State<firstpage> {
 
         },
         child: Icon(Icons.add,color: Colors.white,),
-        backgroundColor: Colors.cyan[200],
+        backgroundColor: Color.fromARGB(255, 6, 89, 92),
       ),
 
     );
@@ -105,7 +116,7 @@ class _firstpageState extends State<firstpage> {
       file.name,
       style:TextStyle(
         fontWeight: FontWeight.bold,
-        decoration: TextDecoration.underline,
+        //decoration: TextDecoration.underline,
         color: Colors.black,
       ),
     ),
@@ -125,7 +136,7 @@ class _firstpageState extends State<firstpage> {
     }
   );
   Widget buildHeader(int length) => ListTile(
-    tileColor: Colors.cyan[100],
+    tileColor: Colors.greenAccent[100],
     leading: Container(
       width: 52,
       height: 52,
