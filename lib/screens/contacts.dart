@@ -39,7 +39,7 @@ class _ContactsState extends State<Contacts> {
       child:Container(
           margin: EdgeInsets.symmetric(vertical: 5),
           padding: EdgeInsets.all(10),
-          height: 90,
+          height: 100,
           color: Colors.green[50],
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

@@ -17,29 +17,30 @@ class NavDrawer extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
             decoration: BoxDecoration(
-                color: Colors.cyanAccent,
+                color: Colors.white,
                 image: DecorationImage(
                     fit: BoxFit.fill,
+
                     image: AssetImage('assets/homepg.jpg'))),
           ),
           ListTile(
             leading: Icon(Icons.alarm_on_rounded),
-            title: Text('Set Reminders'),
+            title: Text(' My Reminders'),
             onTap: () => {Get.to(()=>AddReminder())},
           ),
           ListTile(
             leading: Icon(Icons.folder_copy_sharp),
-            title: Text('Add Documents'),
+            title: Text('My Documents'),
             onTap: () => {Get.to(() =>firstpage())},
           ),
           ListTile(
             leading: Icon(Icons.account_balance_sharp),
-            title: Text('Add Contacts'),
+            title: Text('My Contacts'),
             onTap: () => {Get.to(()=>Contacts())},
           ),
           ListTile(
             leading: Icon(Icons.calendar_month_sharp),
-            title: Text('Save Appointment Reminders'),
+            title: Text('My Appointments'),
             onTap: () => {Get.to(()=>Appointments())},
           ),
         ],
