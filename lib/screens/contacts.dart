@@ -333,14 +333,18 @@ class _ContactsState extends State<Contacts> {
         backgroundColor: Colors.greenAccent[100],
       ),
       body: Container(
-        height: double.infinity,
-        child: FirebaseAnimatedList(query: _ref! , itemBuilder: (BuildContext context,
-            DataSnapshot snapshot,Animation<double>animation,int index){
-          Map contact = snapshot.value as Map;
-          contact['key'] = snapshot.key;
-          return _buildContactItem(contact: contact);
+        child:
+          Container(
+            height: double.infinity,
+            child: FirebaseAnimatedList(query: _ref! , itemBuilder: (BuildContext context,
+                DataSnapshot snapshot,Animation<double>animation,int index){
+              Map contact = snapshot.value as Map;
+              contact['key'] = snapshot.key;
+              return _buildContactItem(contact: contact);
 
-        },),
+            },),
+          ),
+
       ),
 
       floatingActionButton: FloatingActionButton(onPressed: () {
