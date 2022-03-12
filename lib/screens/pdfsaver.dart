@@ -37,6 +37,11 @@ class _firstpageState extends State<firstpage> {
         centerTitle:true,
       ),
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/documents1.png'),
+          ),
+        ),
           child:FutureBuilder<List<FirebaseFile>>(
             future:futureFiles,
             builder:(context,snapshot) {

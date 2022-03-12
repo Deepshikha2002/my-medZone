@@ -54,7 +54,7 @@ class _AppointmentState extends State<Appointments> {
       body:Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/appointment.png'),
+            image: AssetImage('assets/appointments.png'),
           ),
         ),
         child:  Column(

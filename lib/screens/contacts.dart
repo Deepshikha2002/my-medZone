@@ -333,8 +333,12 @@ class _ContactsState extends State<Contacts> {
         backgroundColor: Colors.greenAccent[100],
       ),
       body: Container(
-        child:
-          Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/contacts.png'),
+          ),
+        ),
+        child: Container(
             height: double.infinity,
             child: FirebaseAnimatedList(query: _ref! , itemBuilder: (BuildContext context,
                 DataSnapshot snapshot,Animation<double>animation,int index){

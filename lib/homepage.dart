@@ -29,20 +29,27 @@ class _HomepageState extends State<Homepage> {
         centerTitle:true,
         backgroundColor: Colors.greenAccent[100],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children:[
-        Padding(
-         padding: const EdgeInsets.all(8.0),
-        child: Center(child: MyButton(label: "+ Add Reminder",  onTap: () async { await Get.to(AddReminder());
-         _reminderController.getRems();
-          }
-         ),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/remind.png'),
+          ),
         ),
+        child:  Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children:[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(child: MyButton(label: "+ Add Reminder",  onTap: () async { await Get.to(AddReminder());
+              _reminderController.getRems();
+              }
+              ),
+              ),
+            ),
+            SizedBox(height: 10,),
+            _showReminders(),
+          ],
         ),
-        SizedBox(height: 10,),
-        _showReminders(),
-        ],
       ),
     );
   }
