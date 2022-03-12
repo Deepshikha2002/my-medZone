@@ -13,8 +13,8 @@ class NavDrawer extends StatelessWidget {
         children: <Widget>[
           DrawerHeader(
             child: Text(
-              'Menu',
-              style: TextStyle(color: Colors.white, fontSize: 25),
+              'medZone',
+              style: TextStyle(color: Colors.black, fontSize: 25),
             ),
             decoration: BoxDecoration(
                 color: Colors.cyan[100],

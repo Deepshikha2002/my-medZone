@@ -54,6 +54,7 @@ class _AddReminderState extends State<AddReminder> {
   Widget build(BuildContext context) {
     return Scaffold(
        appBar: AppBar(
+        title:  Text('Create Reminder',),
          backgroundColor: Colors.greenAccent[100],
         leading: GestureDetector(
           onTap: (){
@@ -71,12 +72,6 @@ class _AddReminderState extends State<AddReminder> {
             SizedBox(
               height:10,
             ),
-            Text("Create Reminder",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold, 
-            )
-          ),
           InputField(title:"Medicine Name", hint: "Enter the name of medicine", controller: _titleController,),
           InputField(title:"Dosage", hint: "Enter the amount to be taken", controller: _dosageController,),
           Row(
@@ -121,7 +116,7 @@ class _AddReminderState extends State<AddReminder> {
             ],
           ),
          Container(
-            margin: EdgeInsets.only(top:12.0, right:255.0, bottom:10),
+            margin: EdgeInsets.only(top:12.0, right:250.0, bottom:10),
             child: Text("Medicine Image",
             style: TextStyle(
               fontSize: 15,
