@@ -51,13 +51,20 @@ class _AppointmentState extends State<Appointments> {
 
       ),
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          _addNewAppt(),
-          SizedBox(height: 10,),
-          _showAppointments(),
-        ],
-      ),
+      body:Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/appointment.png'),
+          ),
+        ),
+        child:  Column(
+          children: [
+            _addNewAppt(),
+            SizedBox(height: 10,),
+            _showAppointments(),
+          ],
+        ),
+      )
     );
   }
 

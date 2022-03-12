@@ -25,22 +25,22 @@ class NavDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.alarm_on_rounded),
             title: Text('Set Reminders'),
-            onTap: () => {Get.to(AddReminder())},
+            onTap: () => {Get.to(()=>AddReminder())},
           ),
           ListTile(
             leading: Icon(Icons.folder_copy_sharp),
             title: Text('Add Documents'),
-            onTap: () => {Get.to(firstpage())},
+            onTap: () => {Get.to(() =>firstpage())},
           ),
           ListTile(
             leading: Icon(Icons.account_balance_sharp),
             title: Text('Add Contacts'),
-            onTap: () => {Get.to(Contacts())},
+            onTap: () => {Get.to(()=>Contacts())},
           ),
           ListTile(
             leading: Icon(Icons.calendar_month_sharp),
             title: Text('Save Appointment Reminders'),
-            onTap: () => {Get.to(Appointments())},
+            onTap: () => {Get.to(()=>Appointments())},
           ),
         ],
       ),

@@ -26,7 +26,7 @@ class _HomepageState extends State<Homepage> {
          style: TextStyle(
            color: Colors.black,
          ),)),
-        backgroundColor: Colors.cyanAccent,
+        backgroundColor: Colors.greenAccent[100],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

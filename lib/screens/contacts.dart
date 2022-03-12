@@ -9,6 +9,8 @@ import 'edit_contact.dart';
 class Contacts extends StatefulWidget {
   static String id= 'Contacts';
 
+  const Contacts({Key? key}) : super(key: key);
+
   @override
   _ContactsState createState() => new _ContactsState();
 }
@@ -335,7 +337,7 @@ class _ContactsState extends State<Contacts> {
         Navigator.pushNamed(context, AddContact.id);
       },
         child: Icon(Icons.add),
-        backgroundColor: Color(0xff007e33),
+        backgroundColor: Color.fromARGB(255,6,89,92),
         foregroundColor: Colors.white,
       ),
 

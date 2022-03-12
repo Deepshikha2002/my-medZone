@@ -141,26 +141,34 @@ class _AddContactState extends State<AddContact> {
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 70,
               ),
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                color: Colors.black,
-                child: ElevatedButton(
-                  child: const Text(
+          GestureDetector(
+            onTap: (){saveContact();},
+            child: Center(
+              child: Container(
+
+                width: 250,
+                height: 60,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Color.fromARGB(255, 6, 89, 92),
+                ),
+                child: Center(
+                  child:Text(
                     'save contact',
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 20,
+                      fontWeight: FontWeight.bold,
                       color: Colors.white,
-                      fontWeight: FontWeight.w600,
                     ),
                   ),
-                  onPressed: (){
-                    saveContact();
-                  },
                 ),
-              )
+              ),
+            )
+          ),
+
             ],
           ),
         ),
