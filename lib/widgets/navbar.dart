@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../screens/appointment.dart';
 import '../screens/contacts.dart';
 import '../screens/reminder.dart';
@@ -13,37 +12,32 @@ class NavDrawer extends StatelessWidget {
         children: <Widget>[
           DrawerHeader(
             child: Text(
-              'Side menu',
+              'Menu',
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
             decoration: BoxDecoration(
-                color: Colors.green,
+                color: Colors.cyanAccent,
                 image: DecorationImage(
                     fit: BoxFit.fill,
-                    image: AssetImage('assets/images/cover.jpg'))),
+                    image: AssetImage('assets/homepg.jpg'))),
           ),
           ListTile(
-            leading: Icon(Icons.input),
-            title: Text('Welcome'),
-            onTap: () => {},
-          ),
-          ListTile(
-            leading: Icon(Icons.verified_user),
+            leading: Icon(Icons.alarm_on_rounded),
             title: Text('Set Reminders'),
             onTap: () => {Get.to(AddReminder())},
           ),
           ListTile(
-            leading: Icon(Icons.settings),
+            leading: Icon(Icons.folder_copy_sharp),
             title: Text('Add Documents'),
             onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
-            leading: Icon(Icons.border_color),
+            leading: Icon(Icons.account_balance_sharp),
             title: Text('Add Contacts'),
             onTap: () => {Get.to(Contacts())},
           ),
           ListTile(
-            leading: Icon(Icons.exit_to_app),
+            leading: Icon(Icons.calendar_month_sharp),
             title: Text('Save Appointment Reminders'),
             onTap: () => {Get.to(Appointments())},
           ),
