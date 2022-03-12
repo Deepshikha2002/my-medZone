@@ -19,7 +19,8 @@ class TaskTile extends StatelessWidget {
         ),
         child: Row(children: [
           Expanded(
-            child: Column(
+            child: Row(
+              children:[ Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -58,6 +59,22 @@ class TaskTile extends StatelessWidget {
                 ),
               ],
             ),
+            Column(
+            children:[
+              Container(
+            child: Center(
+             child: Padding(
+               padding: const EdgeInsets.all(8.0),
+                child: Card(
+                    child: Image(image: AssetImage('assets/image["${rem!.id}"].jpg'))
+                ),
+              ),
+              ),
+              )
+            ] 
+            )
+           ],
+           ),
           ),
          
         ]),
