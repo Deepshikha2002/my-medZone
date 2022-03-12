@@ -62,7 +62,7 @@ class _firstpageState extends State<firstpage> {
 
                                   return Container(
                                     width:150,
-                                      height:150,
+                                      height:120,
                                       padding: new EdgeInsets.all(5.0),
                                     child: Card(
                                           elevation: 6,
@@ -124,7 +124,7 @@ class _firstpageState extends State<firstpage> {
     fit: BoxFit.cover,
     ),
     ),
-
+      contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
     title: Text(
       file.name,
       style:TextStyle(
