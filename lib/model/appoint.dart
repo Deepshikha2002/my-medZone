@@ -6,7 +6,7 @@ class Appointment{
   String? startTime;
   String? endTime;
   int? remind;
-  String? address;
+  dynamic address;
   dynamic phoneNo;
 
   Appointment({

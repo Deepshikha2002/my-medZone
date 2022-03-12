@@ -64,7 +64,7 @@ class AppointmentTile extends StatelessWidget {
                 ),
                 SizedBox(height: 12),
                 Text(
-                  "appointment with ${appointment?.docName ?? " "}",
+                  "appointment with Dr. ${appointment?.docName ?? " "}",
                   style: GoogleFonts.lato(
                     textStyle: TextStyle(fontSize: 15, color: Colors.black),
                   ),
