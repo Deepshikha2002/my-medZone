@@ -54,7 +54,7 @@ class Notify{
         uiLocalNotificationDateInterpretation:
         UILocalNotificationDateInterpretation.absoluteTime,
         matchDateTimeComponents: DateTimeComponents.time,
-        payload: "${appointment.name}|"+"appointment with dr. ${appointment.docName}|"
+        payload: "${appointment.name}|"+"${appointment.docName}|"
     );
 
   }

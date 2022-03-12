@@ -36,7 +36,7 @@ class NotifiedPage extends StatelessWidget {
             ),
             child: Text(
                     "You have an appointment with Dr. ${this.label.toString().split("|")[1]}"
-                    "Don't forget to grab your medical reports. medZone",
+                    ". Don't forget to grab your medical reports. medZone",
                     style: TextStyle(
                     color: Colors.black,
                     fontSize: 20,

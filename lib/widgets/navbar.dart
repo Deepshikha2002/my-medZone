@@ -20,7 +20,8 @@ class NavDrawer extends StatelessWidget {
                 color: Colors.greenAccent[100],
                 image: DecorationImage(
                     fit: BoxFit.fill,
-              image: AssetImage('assets/icon.png'),
+              image: AssetImage('assets/icon.png',
+              ),
             ),
            ),
           ),
